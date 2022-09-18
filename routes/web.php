@@ -17,15 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', function (){
-   return 'Faisal Ibn Aziz';
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('hello_world',
-    [\App\Http\Controllers\DemoController::class, 'helloWorld']
-);
-
-Route::get('view_post/{id}', [
-    \App\Http\Controllers\PostController::class,
-    'index'
-]);
+require __DIR__.'/auth.php';

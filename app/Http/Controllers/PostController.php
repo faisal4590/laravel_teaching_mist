@@ -10,7 +10,8 @@ class PostController extends Controller
     public function index($id)
     {
         $post = Post::find($id);
-        return view('posts.view', compact('post'));
+        return view('posts.view',
+            compact('post'));
     }
 
     /**
